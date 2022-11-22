@@ -1,23 +1,28 @@
 <!--![](./.assets/smartbrute.png)-->
 
-# Tool kann zum Sprayen von Anmeldeinformationen für Active Directory-Konten verwendet werden.
+# Description
 
-**:warning: Dieses Projekt ist noch nicht abgeschlossen. Im Moment macht die Programmierung es eher zu einem PoC - als zu einem stabilen Tool. 
+##  Kann mittels BruteForce zum Durchsprühen von Anmeldeinformationen für Active Directory-Konten verwendet werden.
+
+**:warning: Dieses Projekt ist noch nicht abgeschlossen. Im Moment macht die Programmierung es eher zu einem PoC, als zu einem stabilen Tool. 
 Zumindest ist hier alles vorhanden, um mit Bruteforce an jedem Protokoll arbeiten zu können. 
 
-Passwort-Graffiti-Painting, auch bekannt als Smart Spraying, ist ein wirklich cleverer Ansatz gegen Active Directory-Domänendienste & Protokolle. 
+## Core features - Kurz aufgelistet
 
-## Description
+### Jeder Methode hat seine eigenen Vorteile. Uns stehen dabei folgende Möglichkeiten zur Verfügung.
 
-## Core features
-
-Diese Möglichkeiten stehen dabei zur Verfügung. Jeder Methode hat dabei seine eigenen Vorteile:
-- NTLM über SMB: Wenn gültige Konten gefunden werden, werden sie auf lokale Administratorrechte getestet.
+> Diese Methode testet die gefunden Accounts, auf gültige lokale Administratorrechte.
+- NTLM über SMB:
 - NTLM über LDAP
-- [Kerberos pre-authentication](https://www.thehacker.recipes/active-directory-domain-services/movement/kerberos/pre-auth-bruteforce): 
-Dies ist der schnellste und heimlichste Weg.
-     + Das Transportprotokoll kann gewählt werden: UDP oder TCP. UDP ist am schnellsten, wirft aber manchmal Fehler.
-     + Der Typ kann gewählt werden: RC4, AES128, AES256. RC4 ist am schnellsten, aber AES128 und AES256 sind am heimlichsten.
+
+> Diese Methode ist der schnellste und best getarnteste Weg.
+- Kerberos pre-authentication:
+     + Dabei kann zwischen UDP oder TCP als Transportprotokoll gewählt werden.
+     + Als Typ steht RC4, AES128, AES256 zur Verfügung.
+
+     > UDP & RC4 sind dabei die schnellsten Arten.<br>
+     > UDP wirft manchmal klarerweise Fehler aus.
+     > Der Vorteil von AES128 und AES256 
 
 Passwords are not the only secrets that can be bruteforced with this tool.
 - When bruteforcing on NTLM: NT hashes can be attempted.
