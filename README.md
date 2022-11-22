@@ -1,19 +1,23 @@
 <!--![](./.assets/smartbrute.png)-->
 
+# Tool kann zum Sprayen von Anmeldeinformationen für Active Directory-Konten verwendet werden.
+
+**:warning: Dieses Projekt ist noch nicht abgeschlossen. Im Moment macht die Programmierung es eher zu einem PoC - als zu einem stabilen Tool. 
+Zumindest ist hier alles vorhanden, um mit Bruteforce an jedem Protokoll arbeiten zu können. 
+
+Passwort-Graffiti-Painting, auch bekannt als Smart Spraying, ist ein wirklich cleverer Ansatz gegen Active Directory-Domänendienste & Protokolle. 
+
 ## Description
-
-The smart password spraying and bruteforcing tool for Active Directory Domain Services.
-
-**:warning: This project works. But the filthy coding makes it more PoC than a stable tool. I may or may not rewrite this in the future, but at least you have everything here to work with bruteforce on any protocol. It has been tested in ~10 environments on my side, it works 🤷‍♂️**
 
 ## Core features
 
-This tool can be used to bruteforce/spray Active Directory accounts credentials. The following attacks are supported, each attack has its own benefits:
-- NTLM over SMB bruteforce: when valid accounts are found, they will be tested for local administrative privileges.
-- NTLM over LDAP bruteforce
-- [Kerberos pre-authentication bruteforce](https://www.thehacker.recipes/active-directory-domain-services/movement/kerberos/pre-auth-bruteforce): this is the fastest and stealthiest way.
-    + The transport protocol can be chosen: UDP or TCP. UDP is the fastest but sometimes throws errors.
-    + The etype can be chosen: RC4, AES128, AES256. RC4 is the fastest but AES128 and AES256 are the stealthiest. 
+Diese Möglichkeiten stehen dabei zur Verfügung. Jeder Methode hat dabei seine eigenen Vorteile:
+- NTLM über SMB: Wenn gültige Konten gefunden werden, werden sie auf lokale Administratorrechte getestet.
+- NTLM über LDAP
+- [Kerberos pre-authentication](https://www.thehacker.recipes/active-directory-domain-services/movement/kerberos/pre-auth-bruteforce): 
+Dies ist der schnellste und heimlichste Weg.
+     + Das Transportprotokoll kann gewählt werden: UDP oder TCP. UDP ist am schnellsten, wirft aber manchmal Fehler.
+     + Der Typ kann gewählt werden: RC4, AES128, AES256. RC4 ist am schnellsten, aber AES128 und AES256 sind am heimlichsten.
 
 Passwords are not the only secrets that can be bruteforced with this tool.
 - When bruteforcing on NTLM: NT hashes can be attempted.
